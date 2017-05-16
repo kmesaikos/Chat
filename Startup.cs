@@ -1,12 +1,13 @@
 ﻿using Microsoft.Owin;
 using Owin;
-
-
-public class Startup
+[assembly: OwinStartup(typeof(ChatSignalR.Startup))]
+namespace ChatSignalR
 {
-    public void Configuration(IAppBuilder app)
+    public class Startup
     {
-        app.MapSignalR();
+        public void Configuration(IAppBuilder app)
+        {
+            app.MapSignalR();
+        }
     }
 }
-   
